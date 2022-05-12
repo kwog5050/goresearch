@@ -1,0 +1,47 @@
+.boardRead{
+  .updata{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #4da2e8;
+    padding: 20px;
+    z-index: 10;
+  h5{
+      font-size: 24px;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    form{
+      display: flex;
+      flex-direction: column;
+      width: 500px;
+      gap: 10px;
+      input{
+        border: 1px solid #ccc;
+        line-height: 40px;
+        padding: 0px 5px;
+      }
+    }
+    .buttons{
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 0px 0px;
+      input{
+        line-height: 30px;
+        background-color: #ddd;
+        padding: 0px 10px;
+        cursor: pointer;
+      }
+      button{
+        background-color: #fff;
+        border: 1px solid #ccc;
+        line-height: 30px;
+        padding: 0px 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}

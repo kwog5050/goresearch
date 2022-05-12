@@ -1,0 +1,35 @@
+@import "../common/variables";
+
+.contact{
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  input, textarea{
+    width: 100%;
+    border: 1px solid #bbb;
+    margin-bottom: 10px;
+  }
+  input{
+    padding: 10px 5px;
+  }
+  textarea{
+    padding: 10px 5px;
+    height: 200px;
+    resize: none;
+  }
+  input[type="submit"]{
+    cursor: pointer;
+    background-color: #4da2e8;
+    color: #fff;
+    border: none;
+    font-family: $fontBold;
+    width: 150px;
+    padding: 12px 5px;
+  }
+}
+
+@media (max-width:800px){
+  .contact{
+    width: 100%;
+  }
+}

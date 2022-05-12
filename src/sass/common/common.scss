@@ -1,0 +1,325 @@
+@import "./font";
+@import "./variables";
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+	  vertical-align: top;
+    font-size: 14px;
+    line-height: 1; 
+    outline: 0px;
+    /*outline: 1px solid black;*/
+}
+
+body{
+    // text-align: center;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+ul, ol{
+    list-style: none;
+    font-size: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+ul li, ol li{
+    display: inline-block;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font: inherit;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+
+.wrap{
+    // display: inline-block;
+    margin: 0px auto;
+    width: 1200px;
+}
+
+.pc{
+    display: inline-block !important;
+}
+
+.mobile{
+    display: none !important;
+}
+
+.flexBox{
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	align-items: center;
+}
+table{
+    border-collapse: collapse;
+}
+
+caption{
+    display: none;
+}
+
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+input[type="search"], 
+input[type="image"], 
+input[type="tel"], 
+input[type="submit"], 
+button, 
+select, 
+textarea{ 
+    appearance: none;
+    -moz-appearance: none; 
+    -webkit-appearance: none;
+    border-radius: 0; 
+    -webkit-border-radius: 0; 
+    -moz-border-radius: 0; 
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+button{
+  background: none;
+  border: 0;
+}
+
+@media only screen and (min-width:100px) and (max-width:1300px){
+
+}
+@media only screen and (min-width:100px) and (max-width:1200px){
+	
+	.wrap{
+		width: 100%;
+		padding: 0px 15px;
+	}
+
+  .pc{
+		display: none !important;
+	}
+
+	.mobile{
+		display: inherit!important;
+	}
+	
+}
+
+@media only screen and (min-width:100px) and (max-width:1000px){
+
+}
+
+@media only screen and (min-width:100px) and (max-width:800px){
+
+}
+
+@media only screen and (min-width:100px) and (max-width:600px){
+
+}
+
+html{
+    font-family: $fontMedium;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    .loginButton{
+        position: fixed;
+        bottom: 30px;
+        right: 15px;
+        button,a{
+            cursor: pointer;
+        }
+    }
+    #logo{
+        img{
+            height: 50px;
+        }
+    }
+    ul.pc{
+        > li{
+            position: relative;
+            > a{
+                padding: 10px 30px;
+                margin: 0px 15px;
+                line-height: 60px;
+                color: #fff;
+            }
+            > ol{
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                z-index: 1;
+                text-align: center;
+                max-height: 0px;
+                overflow: hidden;
+                transition: max-height .5s;
+                li{
+                    width: 100%;
+                    a{
+                        width: 100%;
+                        line-height: 30px;
+                        background-color: #eee;
+                        &:hover{
+                            background-color: #4da2e8;
+                            color: #fff;
+                        }
+                    }
+                    &:not(:last-child){
+                        border-bottom: 1px solid #aaa;
+                    }
+                }
+            }
+            &:hover{
+                > ol{
+                    max-height: 300px;
+                }
+            }
+        }
+    }
+    div.mobile{
+        .button{
+            i{
+                font-size: 30px;
+                line-height: 60px;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+        ul{
+            position: fixed;
+            top: 0;
+            left: 0px;
+            width: 250px;
+            height: 100vh;
+            background-color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            max-width: 0px;
+            overflow: hidden;
+            transition: max-width .5s;
+            > li{
+                width: 100%;
+                > a, span{
+                    width: 100%;
+                    padding: 10px 0px;
+                    font-size: 18px;
+                    display: block;
+                    cursor: pointer;
+                    white-space: nowrap;
+                }
+                ol{
+                    background-color: #eee;
+                    max-height: 0px;
+                    overflow: hidden;
+                    transition: max-height .5s;
+                    li{
+                        width: 100%;
+                        a{
+                            width: 100%;
+                            font-size: 16px;
+                            padding: 5px 0px;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+                ol.on{
+                    max-height: 300px;
+                }
+            }
+        }
+        ul.on{
+            max-width: 250px;
+        }
+    }
+}
+header.sub{
+    position: sticky;
+    background-color: #fff;
+    border-bottom: 1px solid #4da2e8;
+    ul.pc{
+        li{
+            a{
+                color: #000;
+            }
+        }
+    }
+    .mobile{
+        .button{
+            i{
+                color: #000;
+            }
+        }
+    }
+}
+
+footer{
+    background-color: #161616;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 70px 0px 50px;
+    .br{
+        display: none;
+    }
+    .br2{
+        display: none;
+    }
+    span{
+        line-height: 1.5;
+        font-size: 16px;
+    }
+}
+
+@media(max-width:1000px){
+    footer .br{
+        display: block;
+    }
+    footer span{
+        display: none;
+    }
+    footer .span{
+        display: inline-block;
+    }
+}
+@media(max-width:500px){
+    footer{
+        font-size: 14px;
+        span{
+            font-size: 14px;
+        }
+    }
+    footer .br2{
+        display: block;
+    }
+    footer .span{
+        display:  none;
+    }
+}

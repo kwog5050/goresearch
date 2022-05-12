@@ -1,0 +1,206 @@
+.boardRead{
+  .buttons{
+    padding: 15px 0px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a{
+      background-color: #e4e4e4;
+      padding: 0px 10px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      line-height: 25px;
+    }
+    .search{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      div{
+        position: relative; 
+        select{
+          line-height: 25px;
+          padding: 0px 40px 0px 7px;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+        }
+        i{
+          position: absolute;
+          top: 50%;
+          right: 7px;
+          transform: translateY(-50%);
+        }
+      }
+      input{
+        line-height: 25px;
+        padding: 0px 20px 0px 7px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      button{
+        background-color: #e4e4e4;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        line-height: 25px;
+        padding: 0px 10px;
+        cursor: pointer;
+      }
+    }
+  }
+  .title{
+    display: grid;
+    grid-template-columns: 150px 1fr 120px;
+    border-top: 3px solid #ccc;
+    border-bottom: 2px solid #ddd;
+    background-color: #ececec;
+    li{
+      font-size: 14px;
+      line-height: 40px;
+      text-align: center;
+    }
+  }
+  .boardList{
+    li{
+      display: grid;
+      grid-template-columns: 150px 1fr 120px;
+      border-bottom: 2px solid #e4e4e4;
+      position: relative;
+      align-items: center;
+      p{
+        font-size: 14px;
+        padding: 10px 0px;
+        line-height: 1.2;
+      }
+      p:not(:nth-child(2)){
+        text-align: center;
+      }
+      .editButton{
+        .edit{
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: -38px;
+          display: flex;
+          flex-direction: column;
+          button{
+            line-height: 14px;
+            padding: 0px 5px;
+            margin: 1px 0px;
+            border: 1px solid #aaa;
+            cursor: pointer;
+            &:hover{
+              background-color: #eee;
+            }
+          }
+        }
+      }
+    }
+    > div{
+      text-align: center;
+      border-bottom: 2px solid #e4e4e4;
+      line-height: 150px;
+    }
+  }
+  .pagingnetion{
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    margin-top: 10px;
+    li{
+      a{
+        width: 30px;
+        line-height: 30px;
+        border: 1px solid #eee;
+        text-align: center;
+      }
+    }
+    li.on{
+      a{
+        background-color: #4da2e8;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.boardRead.event{
+  .title{
+    grid-template-columns: 1fr 150px 50px 100px;
+  }
+  .boardList {
+    li{
+      grid-template-columns: 1fr 150px 50px 100px;
+      p{
+        &:first-child{
+          text-align: left;
+          padding: 0px 10px;
+          a{
+            line-height: 40px;
+          }
+        }
+      }
+      p{
+        text-align: center;
+      }
+    }
+  }
+}
+@media(max-width:500px){
+  .boardRead .boardList li .editButton .edit{
+    display: none;
+  }
+  .boardRead .title{
+    grid-template-columns: 100px 1fr 100px;
+  }
+  .boardRead .boardList li{
+    grid-template-columns: 100px 1fr 100px;
+  }
+  .boardRead .buttons .search div select{
+    padding: 0px 22px 0px 7px;
+  }
+  .boardRead .buttons .search input{
+    width: 100px;
+  }
+  .boardRead.event .title{
+    grid-template-columns: 1fr 150px 50px;
+  }
+  .boardRead .title li{
+    font-size: 12px;
+  }
+  .boardRead .title li:nth-child(3){
+    display: none;
+  }
+  .boardRead.event .boardList li{
+    grid-template-columns: 1fr 150px 50px;
+  }
+  .boardRead .boardList li p{
+    font-size: 12px;
+  }
+  .boardRead.event .boardList li p:nth-child(3){
+    display: none;
+  }
+  .boardRead.event .boardList li p:first-child a{
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media(max-width:400px){
+  .boardRead .buttons .search{
+    gap: 5px;
+  }
+  .boardRead .buttons a{
+    font-size: 12px;
+  }
+  .boardRead .buttons .search div select{
+    padding: 0px 15px 0px 7px;
+  }
+  .boardRead .buttons .search button{
+    font-size: 12px;
+  }
+  .boardRead.event .boardList li p:first-child a{
+    width: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

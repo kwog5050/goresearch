@@ -1,0 +1,72 @@
+@import "../../common/variables";
+.container{
+  h3{
+    font-size: 30px;
+    text-align: center;
+    font-family: $fontBold;
+    margin-bottom: 30px;
+  }
+  form.create{
+    text-align: center;
+    input[type="text"]{
+      display: block;
+      width: 800px;
+      margin: 0 auto;
+      line-height: 40px;
+      border: 1px solid #aaa;
+      margin-bottom: 10px;
+      padding: 0px 10px;
+    }
+    textarea{
+      resize: none;
+      width: 800px;
+      display: block;
+      margin: 0 auto;
+      padding: 10px;
+      border: 1px solid #aaa;
+      margin-bottom: 10px;
+      height: 300px;
+    }
+    .file{
+      position: relative;
+      width: 800px;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      input[type="file"]{
+        width: 100%;
+        border: 1px solid #aaa;
+        padding: 10px 10px;
+        color: #555;
+      }
+      img{
+        position: absolute;
+        top: 50%;
+        left: 90px;
+        max-height: 35px;
+        z-index: -1;
+        transform: translateY(-50%);
+      }
+      button{
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+    }
+    input[type="submit"], .back{
+      width: 150px;
+      line-height: 40px;
+      background-color: #4da2e8;
+      border: none;
+      font-size: 18px;
+      font-family: $fontBold;
+      cursor: pointer;
+      color: #fff;
+      margin: 0 5px;
+    }
+    .back{
+      background-color: #444;
+    }
+  }
+}

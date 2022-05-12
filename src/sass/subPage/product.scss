@@ -1,0 +1,127 @@
+.container{
+  .grid{
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    grid-gap: 50px;
+    nav{
+      width: 100%;
+      text-align: center;
+      border: 1px solid #ccc;
+      height: max-content;
+      span{
+        font-size: 24px;
+        line-height: 55px;
+        color: #fff;
+        background-color: #6b859a;
+        border-bottom: 1px solid #ccc;
+        display: block;
+      }
+      ul{
+        display: flex;
+        flex-direction: column;
+        li{
+          a{
+            width: 100%;
+            line-height: 1.2;
+            height: 100%;
+            font-size: 20px;
+            padding: 15px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        li:not(:last-child){
+          a{
+            border-bottom: 1px solid #ccc;
+          }
+        }
+        li.on{
+          a{
+            background-color: #4da2e8;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .board{
+      .banner{
+        width: 100%;
+        border: 1px solid #ccc;
+        text-align: center;
+        img{
+          padding: 30px 0px;
+        }
+        a{
+          display: block;
+          background-color: #ececec;
+          border-top: 1px solid #ccc;
+          font-size: 16px;
+          padding: 15px 0px;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:1000px){
+  .container .grid{
+    grid-template-columns: 1fr;
+  }
+  .container .grid nav ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .container .grid nav ul li:not(:last-child) a{
+    border-bottom: none;
+  }
+  .container .grid nav ul li:is(
+    :nth-child(2),
+    :nth-child(5),
+    :nth-child(8),
+    :nth-child(11),
+    :nth-child(14),
+    :nth-child(17),
+    :nth-child(20),
+    :nth-child(23),
+    :nth-child(26)
+    )
+    {
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+  }
+  @for $i from 1 to 25 {
+    .container .grid nav ul li:nth-child(#{$i}) a{
+      border-bottom: 1px solid #ccc;
+    }
+  }
+}
+
+@media(max-width:600px){
+  .container .grid nav ul li a{
+    font-size: 16px;
+  }
+}
+
+@media(max-width:500px){
+  .container .grid nav ul li a{
+    font-size: 14px;
+    padding: 10px 0px;
+  }
+  .container .grid .board .banner img{
+    max-width: 100%;
+  }
+}
+
+@media(max-width:400px){
+  .container .grid nav ul li a{
+    font-size: 12px;
+  }
+}
+
+@media (max-width:330px) {
+  .container .grid nav ul li a{
+    font-size: 10px;
+  }
+}

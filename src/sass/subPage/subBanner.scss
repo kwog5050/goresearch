@@ -1,0 +1,153 @@
+@import "../common/variables";
+
+.subBanner{
+  width: 100%;
+  position: relative;
+  img{
+    width: 100%;
+    min-height: 250px;
+  }
+  h3{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 40px;
+  }
+  nav{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #00000077;
+    > .wrap{
+      display: flex;
+      align-items: center;
+      .home{
+        i{
+          width: 70px;
+          line-height: 50px;
+          text-align: center;
+          color: #fff;
+          border-left: 1px solid #ddd;
+          font-size: 16px;
+        }
+      }
+      div{
+        position: relative;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        z-index: 10;
+        span{
+          display: block;
+          color: #fff;
+          padding: 0px 15px;
+          width: 150px;
+          line-height: 50px;
+          position: relative;
+          font-size: 16px;
+          cursor: pointer;
+          i{
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            font-size: 16px;
+          }
+        }
+        ul{
+          position: absolute;
+          max-height: 0px;
+          overflow: hidden;
+          transition: max-height .5s;
+          li{
+            width: 100%;
+            a{
+              line-height: 40px;
+              width: 100%;
+              padding: 0px 15px;
+              background-color: #00000077;
+              color: #fff;
+            }
+            a:hover{
+              background-color: #00000055;
+            }
+          }
+          li:not(:last-child){
+            border-bottom: 1px solid #ddd;
+          }
+        }
+        ul.on{
+          max-height: 500px;
+        }
+      }
+    }
+  }
+}
+
+.container{
+  padding: 100px 0px;
+ .title{
+    > h2{
+      text-align: center;
+      font-size: 30px;
+      font-family: $fontBold;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@media (max-width:800px) {
+  .container{
+    padding: 50px 0px;
+  }
+  .container .title > h2{
+    font-size: 24px;
+  }
+  .subBanner h3{
+    top: 42%;
+    font-size: 34px;
+  }
+  .subBanner nav > .wrap .home i{
+    width: 50px;
+  }
+  .subBanner nav > .wrap div span{
+    width: 100px;
+    font-size: 14px;
+  }
+  .subBanner nav > .wrap div span i{
+    right: 10px;
+  }
+  .container h3{
+    font-size: 24px;
+  }
+}
+
+@media(max-width:500px){
+  .subBanner img{
+    min-height: 200px;
+  }
+  .subBanner h3{
+    font-size: 30px;
+  }
+  .subBanner nav > .wrap .home i{
+    line-height: 40px;
+  }
+  .subBanner nav > .wrap div span{
+    line-height: 40px;
+  }
+  .bg .bgContent{
+    padding: 10px;
+  }
+  .bg .bgContent p:last-child{
+    font-size: 16px;
+  }
+  .content h4{
+    font-size: 20px;
+  }
+}
+
+// @media(max-width:400px){
+//   .container{
+//     padding: 30px 0px;
+//   }
+// }
